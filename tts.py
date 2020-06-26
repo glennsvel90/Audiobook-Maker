@@ -17,3 +17,9 @@ for line in f:
     else:
         #A pause after a sentence
         rendered = '<speak><amazon:effect name=\\"drc\\">' + line.strip() + '<break time=\\"1s\\"/></amazon:effect></speak>'
+    file_name = ' polly_out{0}.mp3'.format(u''.join(str(cnt)).encode('utf-8'))
+    cnt += 1
+    command = command.format(rendered.encode('utf-8'), file_name)
+    file_names += file_name
+    print (command)
+    subprocess.call(command, shell=True)
