@@ -23,3 +23,7 @@ for line in f:
     file_names += file_name
     print (command)
     subprocess.call(command, shell=True)
+    
+print (file_names)
+execute_command = 'cat ' + file_names + '>result.mp3'
+subprocess.call(execute_command, shell=True)
