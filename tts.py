@@ -24,11 +24,6 @@ for line in f:
     print (command)
     subprocess.call(command, shell=True)
     
-print (file_names)
-execute_command = 'cat ' + file_names + '>result.mp3'
-subprocess.call(execute_command, shell=True)
-
-
 execute_command = 'rm ' + file_names
 print ('Removing temporary files: ' + execute_command)
 subprocess.call(execute_command, shell=True)
